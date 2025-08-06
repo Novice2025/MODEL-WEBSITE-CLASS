@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daby English Expressions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background inspired by Netflix */
+            background-image: radial-gradient(at 50% 0%, rgba(255, 0, 0, 0.15) 0%, transparent 70%),
+                              radial-gradient(at 0% 100%, rgba(255, 165, 0, 0.15) 0%, transparent 70%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #e2e8f0; /* Light gray text for contrast */
+        }
+        .container {
+            max-width: 960px; /* Increased max-width for better content display */
+            margin: 0 auto;
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        .lesson-card {
+            background-color: #2d3748; /* Slightly lighter dark background for cards */
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+            margin-bottom: 2rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+        .lesson-card:hover {
+            transform: translateY(-5px);
+        }
+        .headline {
+            color: #ef4444; /* McDonald's/Burger King Red */
+            font-weight: 800; /* Extra bold */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .sub-headline {
+            color: #facc15; /* McDonald's/Burger King Yellow */
+            font-weight: 700;
+        }
+        .highlight-text {
+            color: #f87171; /* Lighter red for emphasis */
+            font-weight: 700;
+        }
+        .example-box {
+            background-color: #4a5568; /* Darker gray for example boxes */
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #facc15; /* Yellow border for emphasis */
+        }
+        .answer-reveal {
+            background-color: #10b981; /* Green for correct answers */
+            color: #1a202c; /* Dark text on green */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease-out, max-height 0.5s ease-out;
+        }
+        .answer-reveal.show {
+            opacity: 1;
+            max-height: 100px; /* Adjust as needed to fit content */
+        }
+        .check-answer-btn {
+            background-color: #facc15; /* Yellow button */
+            color: #1a202c; /* Dark text */
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded */
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .check-answer-btn:hover {
+            background-color: #fbbf24; /* Lighter yellow on hover */
+            transform: translateY(-2px);
+        }
+        .input-field {
+            background-color: #4a5568;
+            color: #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease-in-out;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #facc15;
+        }
+        footer {
+            background-color: #1a202c;
+            color: #a0aec0;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: auto; /* Pushes footer to the bottom */
+            border-top: 1px solid #2d3748;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center my-8 headline">
+            Daby English Expressions
+        </h1>
+        <p class="text-center text-lg mb-12 text-gray-300">
+            Bem-vindo(a) ao seu guia para dominar expressões essenciais em inglês no ambiente de trabalho e no dia a dia! Vamos aprender juntos de forma prática e eficaz.
+        </p>
+
+        <!-- Add your lesson-card content here -->
+        <!-- Example of an empty lesson card structure: -->
+        <!--
+        <div class="lesson-card">
+            <h2 class="text-2xl font-bold sub-headline mb-4">Expressão X: Título da Expressão</h2>
+            <p class="text-gray-200 mb-4">
+                Explicação da expressão em português e inglês, com destaque para palavras-chave.
+            </p>
+
+            <div class="example-box">
+                <p class="text-gray-100 mb-2">
+                    Exemplo de uso em inglês.
+                </p>
+                <p class="text-green-400 font-bold text-2xl">Your final answer is...</p>
+            </div>
+
+            <p class="text-gray-100 mb-2">
+                Pratique!
+            </p>
+            <p class="text-yellow-300 font-semibold text-lg mb-4">
+                Pergunta para o usuário.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <input type="text" placeholder="Sua resposta aqui..." class="flex-grow input-field">
+                <button class="check-answer-btn" data-answer="Answer: 'Resposta esperada.'">
+                    Check answer
+                </button>
+            </div>
+            <div class="answer-reveal"></div>
+        </div>
+        -->
+
+    </div>
+
+    <footer>
+        <p>Daby &copy; 2025 copyright</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // This script would typically contain logic for interactive elements
+            // like the check answer buttons, if you add them back.
+            // For now, it's just the basic DOMContentLoaded listener.
+        });
+    </script>
+</body>
+</html>
